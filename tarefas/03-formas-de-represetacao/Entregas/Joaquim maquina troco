@@ -1,0 +1,80 @@
+# Atividade — Máquina de Troco
+
+## Parte 1- Descrição 
+O funcionamento da máquina de troco sera conforme o valor enserido pelo cliente com o preço do produto que for escolhido.]
+
+**Valor insuficiente**: Ao receber os dados, a máquina verifica se o valor pago é menor que o preço do produto. Se for, ela exibe imediatamente a mensagem "Valor insuficiente" e encerra o processo, devolvendo o dinheiro.
+
+**Sem troco**: Caso o valor pago seja exatamente igual ao preço do produto, a máquina exibe a mensagem "Sem troco" e finaliza a transação com sucesso, liberando o produto.
+
+**Cálculo e devolução do troco**: Se o valor pago for maior que o preço do produto escolhido, a máquina calcula a diferença para saber o troco total. Para evitar erros matemáticos com decimais, ela converte esse valor para centavos. Em seguida, a máquina consulta uma lista de todas as cédulas e moedas disponíveis, ordenadas da maior (R$ 100,00) para a menor (R$ 0,01).
+
+**Decisão das notas e moedas**: Para cada valor da lista, a máquina divide o troco restante por esse valor. A parte inteira dessa divisão indica quantas daquelas notas ou moedas devem ser devolvidas. Se a quantidade for maior que zero, a máquina separa o dinheiro, anota na tela e atualiza o saldo do troco usando apenas o resto da divisão.
+
+**Término**: O processo se repete descendo pela lista de cédulas e moedas até que o valor restante do troco chegue a zero, garantindo a entrega do menor número possível de notas e moedas.
+
+## Parte 2- Fluxograma 
+
+Inicio([Início]) --> Entrada[/Lê o preço e o valor pago/]
+    
+Entrada --> Decisao1{Pagou menos\nque o preço?}
+Decisao1 -- Sim --> Insuficiente[/Avisa: "Valor insuficiente"/]
+Insuficiente --> Fim([Fim])
+    
+Decisao1 -- Não --> Decisao2{Pagou o valor\nexato?}
+Decisao2 -- Sim --> SemTroco[/Avisa: "Sem troco"/]
+SemTroco --> Fim
+
+Decisao2 -- Não --> Calculo[Descobre o troco e\nmultiplica por 100 para\ntransformar em centavos]
+Calculo --> Gaveta[Pega a lista de dinheiro\nda maior nota para a menor moeda]
+Gaveta --> Loop{Ainda tem opções na\nlista e o troco é maior que 0?}
+    
+Loop -- Não --> Fim
+    
+Loop -- Sim --> Divisao[Verifica quantas notas inteiras cabem (DIV)\ne guarda só o que sobrou de troco (MOD)]
+Divisao --> DecisaoQtd{Deu 1 nota ou mais?}
+    
+DecisaoQtd -- Sim --> ExibeMoeda[/Entrega a quantidade de notas/moedas/]
+ExibeMoeda --> Atualiza[O troco agora é só o que sobrou da conta anterior]
+Atualiza --> Proxima[Passa para o próximo dinheiro da lista]
+    
+DecisaoQtd -- Não --> Proxima
+Proxima --> Loop
+
+## Parte 3- Pseudocódigo 
+
+ALGORITMO maquina_de_troco
+  LEIA preco, pago
+  
+  SE pago < preco ENTÃO
+    ESCREVA "Valor insuficiente"
+  SENÃO
+    troco_real ← pago - preco
+    
+    SE troco_real == 0 ENTÃO
+      ESCREVA "Sem troco"
+    SENÃO
+      // Converte para centavos para evitar erro de arredondamento
+      troco ← troco_real * 100
+      
+      PARA CADA valor EM [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1] FAÇA
+        qtd ← troco DIV valor
+        
+        SE qtd > 0 ENTÃO
+          ESCREVA qtd, " × R$ ", valor / 100
+          troco ← troco MOD valor
+        FIM SE
+      FIM PARA
+  FIM SE
+FIM ALGORITMO
+
+
+## Final- Conclusão final sobre o trabalho
+**O que ficou mais fácil de escrever?**
+    O mais facil de escrever foi a descrição narrativa pois ela pode ser escrita com base no nosso modo de falar, não tem regras para ordenar os codigos e formatos que são necessarios para que o pensamento de certo.
+
+**O que ficou mais preciso?**
+    Por mais que seja o mais complexo o pseudocódigo acaba sendo o mais preciso, pois atraves dele o computador sabe exatamente o sistema que deve ser seguido e como executar, como as divisões, em qual momento devolve o troco, quando não tem troco e etc...Sendo assim tudo direcionado da forma exata para ser executado.
+
+**Qual a utilidade do Fluxograma então??**
+    Atraves do Fluxograma conseguimos ver que ele se torna um passo importante para ver o problema de forma mais clara. Por exemplo, no pseudocódigo se torna necessariuo as espeçifições linha por linha, já no fluxograma é mais facil de uma pessoa entender somente batendo o olho e vendo as necessitades da questão.
