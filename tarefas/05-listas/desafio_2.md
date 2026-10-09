@@ -4,7 +4,7 @@
 
 ## Contexto
 
-Na engenharia de produção, é comum gerenciar matrizes ou tabelas de dados onde cada linha representa uma peça e suas propriedades.
+É comum gerenciar matrizes ou tabelas de dados onde cada linha representa uma peça e suas propriedades.
 
 - **Estrutura de cada linha:** `[ID_Peca, Quantidade, Preco_Unitario_R$]`
 
