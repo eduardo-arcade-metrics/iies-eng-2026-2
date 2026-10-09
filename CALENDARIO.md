@@ -9,11 +9,11 @@
 | 11/09/2026 sex | Aula 04 | Variáveis, operadores e estrutura condicional. Expressões, precedência, `if`, `elif`, `else` |
 | 18/09/2026 sex | Revisão | Revisão para NP1 |
 | 25/09/2026 sex | **NP1** | Prova |
-| 02/10/2026 sex | Aula 05 | Estrutura sequencial e condicional composta. `input()`, `print()`, f-string, `match/case` |
-| 09/10/2026 sex | Aula 06 | Estrutura de repetição: PARA. `for`, `range()`, iteração em listas |
-| 16/10/2026 sex | — folga | |
-| 23/10/2026 sex | Aula 07 | Estrutura de repetição: ENQUANTO. `while`, `break`, `continue` |
-| 30/10/2026 sex | Aula 08 | Estrutura de dados: vetores e matrizes. listas, listas aninhadas, fatiamento |
-| 06/11/2026 sex | Aula 09 | Modularização e funções. `def`, parâmetros, retorno, escopo de variáveis |
-| 13/11/2026 sex | Revisão | Revisão para NP2 |
+| 02/10/2026 sex | - folga |  |
+| 09/10/2026 sex | Aula 05 | Estrutura de dados - Listas |
+| 16/10/2026 sex | Aula 06 | Estrutura de dados - Dicionários 1|
+| 23/10/2026 sex | Aula 07 | Tabelas - biblioteca pandas |
+| 30/10/2026 sex | - folga |  |
+| 06/11/2026 sex | Aula 08 | Tabelas 2 |
+| 13/11/2026 sex | Revisão | Revisão - Trabalho em grupo |
 | 20/11/2026 sex | **NP2** | Prova |
